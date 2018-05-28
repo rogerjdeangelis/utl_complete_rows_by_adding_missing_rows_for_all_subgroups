@@ -17,7 +17,7 @@ SiyaKiran profile (SQL solution)
 https://communities.sas.com/t5/user/viewprofilepage/user-id/83078
 
 
-  WPS agrred with SAS on all 6 solutions
+  WPS agreed with SAS on all 6 solutions
 
   Six solutions
 
@@ -31,6 +31,10 @@ https://communities.sas.com/t5/user/viewprofilepage/user-id/83078
       6. HASH
 
   Could not compose a datastep centered solution?
+  
+  see additional datastep solution by on the end
+  Paul Dorfman
+
 
 INPUT
 =====
