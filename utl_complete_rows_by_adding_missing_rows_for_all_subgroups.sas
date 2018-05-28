@@ -453,3 +453,34 @@ run;quit;
      run;quit;
 ');
 
+
+Paul Dorfman
+
+data want (drop = _:) ;
+  array h [99] $ 8 _temporary_ ;
+  array f [99]   8 _temporary_ ;
+  if _n_ = 1 then do until (z) ;
+    set have end = z ;
+    if whichC (age, of h[*]) then continue ; *check for dupes;
+    _n + 1 ;
+    h[_n] = age ;
+  end ;
+  do until (last.diagnosis) ;
+    set have ;
+    by diagnosis ;
+    output ;
+    _x = whichC (age, of h[*]); *mark those already present in current by-group;
+    if _x then f[_x] = 1 ;
+  end ;
+  call missing (number_patients) ;
+  do _x = 1 to _n ;
+    if not f[_x] then do ; *output those not present in current by-group;
+      age = h[_x] ;
+      output ;
+    end ;
+    else f[_x] = 0 ; *reset flags for next by-group;
+  end ;
+run ;
+
+
+
